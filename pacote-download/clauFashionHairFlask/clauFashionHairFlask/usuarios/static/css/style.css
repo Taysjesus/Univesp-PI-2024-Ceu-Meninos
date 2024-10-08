@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Montserrat;
+    color: #333;
+}
+p, label, a{
+font-weight: 600;
+}
+
+header {
+    height: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav {
+    width: 80%;
+}
+ul {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    gap: 5px;
+}
+li {
+    list-style: none;
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transform: 5s;
+    font-family: 'kadam thomor pro', sans-serif;
+}
+li:hover {
+    color: rosybrown;
+}
+#logo {
+    margin-top: 20px;
+    width: 180px;
+    height: auto;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.link-nav{
+    margin-right: 25px;
+    text-decoration: none;
+}
+.link-nav:hover {
+    text-decoration: underline;
+}
+
+.restante-nav {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    width: fit-content;
+}
+
+.container-login {
+    padding-bottom: 100px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.container-popup {
+    position: fixed;
+    top: 140px;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: rgba(0, 0, 0, 0.2) url('../fotos-site/background.webp') no-repeat center center;
+    background-size: cover;
+    display: flex;
+}
+
+.popup {
+    /* display: none !important; */
+    width: 400px;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 3px;
+    padding: 10px;
+    border: 3px solid #ccc;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.2) url('../fotos-site/background.webp') no-repeat center center;
+    background-size: cover;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 1.0);
+}
+
+.div-input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+}
+
+.div-botao {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+    margin-top: 10px;
+}
+.fixo{
+    align-items: center;
+    position: fixed;
+    bottom: 30px;
+    z-index: 1000;
+}
+.sair{
+    position: fixed;
+    top: 5px;
+    z-index: 1000;
+}
+
+.label {
+    margin-right: auto;
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+.input {
+    width: 100%;
+    font-size: 16px;
+    padding: 15px;
+    border: 2px solid #cdcdcd;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+
+.botao-login {
+    border-radius: 25px;
+    padding: 15px 20px;
+    width: 100%;
+    border: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: blue;
+    color: #fff;
+}
+
+.botao-login:hover {
+    background-color: green;
+}
+
+.link-criarconta {
+    color: #888;
+    text-decoration: none;
+}
+
+.link-criarconta:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+.botao-perfil a {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+.botao-perfil a:hover {
+    background-color: #777;
+    text-decoration: none;
+}
+
+.conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    max-width: 100vw;
+    column-gap: 10px;
+    row-gap: 30px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.botao-login {
+    width: auto;
+}
+
+.bloco-input-botao {
+    display: flex;
+    column-gap: 20px;
+}
+.logo-whatsapp {
+    position: fixed;
+    right: 1rem;
+    bottom: 0.5rem;
+    width: 4.6rem;
+}
+
+.logo-whatsapp:hover {
+    transform: translate(0.5rem, 0.2rem);
+}
+
+.logo-whatsapp img {
+    width: 100%;
+}
+#agendamentos-list {
+            max-width: 400px;
+            max-height: 400px; /* Ajuste a altura conforme necessário */
+            overflow-y: auto;
+            border: 3px solid #ccc; /* Cor da borda */
+            border-radius: 10px; /* Bordas arredondadas */
+            padding: 10px; /* Espaçamento interno */
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 1.0); /* Sombra */
+            background: rgba(0, 0, 0, 0.3) url('../fotos-site/background.webp') no-repeat center center;
+        }
+.flashes {
+            list-style-type: none;
+            padding: 0;
+        }
+        .flashes li {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .flashes .success {
+
+            background-color: green;
+            color: #fff;
+        }
+        .flashes .danger {
+
+            background-color: red;
+            color: #fff;
+        }

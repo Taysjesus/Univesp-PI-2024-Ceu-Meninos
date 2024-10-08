@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Agendar Horário</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: rgba(243, 44, 173, 0.2);
+        }
+    </style>
+</head>
+<body class="overflow-hidden">
+<div class="div-botao container">
+    <a href="{{ url_for('logout') }}" class="link-criarconta btn btn-outline-dark botao-login sair">Sair</a>
+</div>
+<div class="container">
+    <h1 class="mt-5">Agendar Horário</h1>
+
+    <!-- Exibir mensagens flash -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    {% block formulario %}
+    <form action="{{ url_for('agendar') }}" method="post" class="mt-3 popup">
+        <div class="form-group">
+            <label for="date">Data:</label>
+            <input type="date" id="date" name="date" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label for="time">Hora:</label>
+            <select id="time" name="time" class="form-control" required>
+                {% for hour in range(0, 24) %}
+                    {% for minute in ['00', '30'] %}
+                        <option value="{{ '%02d:%s'|format(hour, minute) }}">{{ '%02d:%s'|format(hour, minute) }}</option>
+                    {% endfor %}
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-outline-success botao-login">Agendar</button>
+    </form>
+    {% endblock %}
+    <a href="{{ url_for('agendamentos') }}" class="btn btn-outline-primary botao-login">Agendamentos</a>
+</div>
+<a href="https://api.whatsapp.com/send?phone=5511989545645" target="_blank" class="logo-whatsapp">
+    <img src="{{ url_for('static', filename='fotos-site/logo-whatsapp.png') }}"/>
+</a>
+
+<script src="{{ url_for('static', filename='js/ver_agendamento.js') }}"></script>
+</body>
+</html>
+

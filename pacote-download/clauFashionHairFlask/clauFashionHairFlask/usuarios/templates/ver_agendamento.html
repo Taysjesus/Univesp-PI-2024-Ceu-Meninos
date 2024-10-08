@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Agendamentos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: rgba(243, 44, 173, 0.2);
+        }
+    </style>
+</head>
+<body>
+<div class="div-botao container">
+    <a href="{{ url_for('logout') }}" class="link-criarconta btn btn-outline-dark botao-login sair">Sair</a>
+</div>
+<div class="container">
+    <h1 class="mt-5">Agendamentos</h1>
+    <ul id="agendamentos-list" class="list-group mt-3">
+        {% for agendamento in agendamentos %}
+        <li class="list-group-item">
+            {{ agendamento.name }} - {{ agendamento.date }} às {{ agendamento.time }}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('agendar') }}" class="btn btn-outline-success mt-3 botao-login fixo">Agendar novo horário</a>
+</div>
+<a href="https://api.whatsapp.com/send?phone=5511989545645" target="_blank" class="logo-whatsapp">
+    <img src="{{ url_for('static', filename='fotos-site/logo-whatsapp.png') }}"/>
+</a>
+
+<script src="{{ url_for('static', filename='js/ver_agendamento.js') }}"></script>
+</body>
+</html>
